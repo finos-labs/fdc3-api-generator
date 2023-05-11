@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Converted from IntentResolution.yaml with typeconv
+  version: '1'
+  x-id: IntentResolution.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/IntentResolution.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    IntentResolution:
+      properties:
+        source:
+          title: IntentResolution.source
+          description: >-
+            Identifier for the app instance that was selected (or started) to
+            resolve the intent.
+
+            `source.instanceId` MUST be set, indicating the specific app
+            instance that
+
+            received the intent.
+        intent:
+          title: IntentResolution.intent
+          description: >-
+            The intent that was raised. May be used to determine which intent
+            the user
+
+            chose in response to `fdc3.raiseIntentForContext()`.
+          type: string
+        version:
+          title: IntentResolution.version
+          description: The version number of the Intents schema being used.
+          type: string
+      required:
+        - source
+        - intent
+      additionalProperties: false
+      title: IntentResolution
+      description: "IntentResolution provides a standard format for data returned upon resolving an intent.\n\n```javascript\n//resolve a \"Chain\" type intent\nlet resolution = await agent.raiseIntent(\"intentName\", context);\n\n//resolve a \"Client-Service\" type intent with a data response or a Channel\nlet resolution = await agent.raiseIntent(\"intentName\", context);\ntry {\n\t   const result = await resolution.getResult();\n    if (result && result.broadcast) {\n        console.log(`${resolution.source} returned a channel with id ${result.id}`);\n    } else if (result){\n        console.log(`${resolution.source} returned data: ${JSON.stringify(result)}`);\n    } else {\n        console.error(`${resolution.source} didn't return data`\n    }\n} catch(error) {\n    console.error(`${resolution.source} returned an error: ${error}`);\n}\n\n// Use metadata about the resolving app instance to target a further intent\nawait agent.raiseIntent(\"intentName\", context, resolution.source);\n```"
+      type: object

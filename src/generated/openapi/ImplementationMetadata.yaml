@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: Converted from ImplementationMetadata.yaml with typeconv
+  version: '1'
+  x-id: ImplementationMetadata.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/ImplementationMetadata.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    ImplementationMetadata:
+      properties:
+        fdc3Version:
+          title: ImplementationMetadata.fdc3Version
+          description: >-
+            The version number of the FDC3 specification that the implementation
+            provides.
+
+            The string must be a numeric semver version, e.g. 1.2 or 1.2.1.
+          type: string
+        provider:
+          title: ImplementationMetadata.provider
+          description: >-
+            The name of the provider of the Desktop Agent implementation (e.g.
+            Finsemble, Glue42, OpenFin etc.).
+          type: string
+        providerVersion:
+          title: ImplementationMetadata.providerVersion
+          description: >-
+            The version of the provider of the Desktop Agent implementation
+            (e.g. 5.3.0).
+          type: string
+        optionalFeatures:
+          properties:
+            OriginatingAppMetadata:
+              title: ImplementationMetadata.optionalFeatures.OriginatingAppMetadata
+              description: >-
+                Used to indicate whether the exposure of 'origninating app
+                metadata' for
+
+                context and intent messages is supported by the Desktop Agent.
+              type: boolean
+            UserChannelMembershipAPIs:
+              title: >-
+                ImplementationMetadata.optionalFeatures.UserChannelMembershipAPIs
+              description: >-
+                Used to indicate whether the optional `fdc3.joinUserChannel`,
+
+                `fdc3.getCurrentChannel` and `fdc3.leaveCurrentChannel` are
+                implemented by
+
+                the Desktop Agent.
+              type: boolean
+            DesktopAgentBridging:
+              title: ImplementationMetadata.optionalFeatures.DesktopAgentBridging
+              description: |-
+                Used to indicate whether the experimental Desktop Agent Bridging
+                feature is implemented by the Desktop Agent.
+              type: boolean
+          required:
+            - OriginatingAppMetadata
+            - UserChannelMembershipAPIs
+            - DesktopAgentBridging
+          additionalProperties: false
+          title: ImplementationMetadata.optionalFeatures
+          description: >-
+            Metadata indicating whether the Desktop Agent implements optional
+            features of
+
+            the Desktop Agent API.
+          type: object
+        appMetadata:
+          title: ImplementationMetadata.appMetadata
+          description: >-
+            The calling application instance's own metadata, according to the
+            Desktop Agent (MUST include at least the `appId` and `instanceId`).
+      required:
+        - fdc3Version
+        - provider
+        - optionalFeatures
+        - appMetadata
+      additionalProperties: false
+      title: ImplementationMetadata
+      description: >-
+        Metadata relating to the FDC3 Desktop Agent implementation and its
+        provider.
+      type: object

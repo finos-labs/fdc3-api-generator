@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  title: Converted from Bob.yaml with typeconv
+  version: '1'
+  x-id: Bob.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/Bob.ts by core-types-json-schema
+    (https://github.com/grantila/core-types-json-schema) on behalf of typeconv
+    (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    Bob:
+      additionalProperties: false
+      title: Bob
+      type: object

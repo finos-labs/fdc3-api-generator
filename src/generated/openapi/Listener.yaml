@@ -1,0 +1,19 @@
+openapi: 3.0.0
+info:
+  title: Converted from Listener.yaml with typeconv
+  version: '1'
+  x-id: Listener.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/Listener.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    Listener:
+      additionalProperties: false
+      title: Listener
+      description: |-
+        SPDX-License-Identifier: Apache-2.0
+        Copyright FINOS FDC3 contributors - see NOTICE file
+      type: object

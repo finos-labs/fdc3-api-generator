@@ -1,5 +1,11 @@
 # dependencies
 /node_modules
+target
+
+# Eclipse
+.project
+.classpath
+.settings
 
 # production
 /build

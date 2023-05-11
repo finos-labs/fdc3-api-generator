@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+ title: FDC3 Desktop Agent
+ version: 'next'
+ description: >
+   tbd
+ x-logo:
+   url: '/img/fdc3-logo-2019-color.png'
+   altText: FDC3 logo
+security:
+ - bearerAuth: []
+paths:
+ '/open/{appId}':
+   post:
+     operationId: open
+     summary: Opens an FDC3 App
+     requestBody:
+       description: Optional description in *Markdown*
+       required: true
+       content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/Context'
+     parameters:
+       - name: appId
+         in: path
+         required: true
+         schema:
+           type: string
+     responses:
+       '200':
+         description: OK
+components:
+ schemas:
+   Context:
+     type: object
+     properties:
+       type:
+         type: string
+       name:
+         type: string
+       id:
+         type: object
+         additionalProperties:
+           type: string
+     required:
+     - type

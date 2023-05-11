@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: Converted from Channel.yaml with typeconv
+  version: '1'
+  x-id: Channel.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/Channel.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    Channel:
+      properties:
+        id:
+          title: Channel.id
+          description: Constant that uniquely identifies this channel.
+          type: string
+        type:
+          enum:
+            - user
+            - app
+            - private
+          title: Channel.type
+          description: |-
+            Uniquely defines each channel type.
+            Can be "user", "app" or "private".
+          type: string
+        displayMetadata:
+          title: Channel.displayMetadata
+          description: >-
+            Channels may be visualized and selectable by users. DisplayMetadata
+            may be used to provide hints on how to see them.
+
+            For App channels, displayMetadata would typically not be present.
+      required:
+        - id
+        - type
+      additionalProperties: false
+      title: Channel
+      description: Object representing a context channel.
+      type: object

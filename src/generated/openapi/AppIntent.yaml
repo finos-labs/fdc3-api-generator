@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: Converted from AppIntent.yaml with typeconv
+  version: '1'
+  x-id: AppIntent.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/AppIntent.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    AppIntent:
+      properties:
+        intent:
+          title: AppIntent.intent
+          description: >-
+            Details of the intent whose relationship to resolving applications
+            is being described.
+        apps:
+          items: {}
+          title: AppIntent.apps
+          description: Details of applications that can resolve the intent.
+          type: array
+      required:
+        - intent
+        - apps
+      additionalProperties: false
+      title: AppIntent
+      description: An interface that relates an intent to apps
+      type: object

@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: Converted from Icon.yaml with typeconv
+  version: '1'
+  x-id: Icon.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/Icon.ts by core-types-json-schema
+    (https://github.com/grantila/core-types-json-schema) on behalf of typeconv
+    (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    Icon:
+      properties:
+        src:
+          title: Icon.src
+          description: The icon url
+          type: string
+        size:
+          title: Icon.size
+          description: The icon dimension, formatted as `<height>x<width>`.
+          type: string
+        type:
+          title: Icon.type
+          description: >-
+            Icon media type. If not present the Desktop Agent may use the src
+            file extension.
+          type: string
+      required:
+        - src
+      additionalProperties: false
+      title: Icon
+      description: |-
+        SPDX-License-Identifier: Apache-2.0
+        Copyright FINOS FDC3 contributors - see NOTICE file
+      type: object

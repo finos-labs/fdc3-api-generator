@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Converted from Image.yaml with typeconv
+  version: '1'
+  x-id: Image.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/Image.ts by core-types-json-schema
+    (https://github.com/grantila/core-types-json-schema) on behalf of typeconv
+    (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    Image:
+      properties:
+        src:
+          title: Image.src
+          description: The image url.
+          type: string
+        size:
+          title: Image.size
+          description: The image dimension, formatted as `<height>x<width>`.
+          type: string
+        type:
+          title: Image.type
+          description: >-
+            Image media type. If not present the Desktop Agent may use the src
+            file extension.
+          type: string
+        label:
+          title: Image.label
+          description: Caption for the image.
+          type: string
+      required:
+        - src
+      additionalProperties: false
+      title: Image
+      description: |-
+        SPDX-License-Identifier: Apache-2.0
+        Copyright FINOS FDC3 contributors - see NOTICE file
+      type: object

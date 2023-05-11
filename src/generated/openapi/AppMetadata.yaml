@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: Converted from AppMetadata.yaml with typeconv
+  version: '1'
+  x-id: AppMetadata.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/AppMetadata.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    AppMetadata:
+      properties:
+        name:
+          title: AppMetadata.name
+          description: >-
+            The 'friendly' app name. 
+
+            This field was used with the `open` and `raiseIntent` calls in FDC3
+            <2.0, which now require an `AppIdentifier` wth `appId` set. 
+
+            Note that for display purposes the `title` field should be used, if
+            set, in preference to this field.
+          type: string
+        version:
+          title: AppMetadata.version
+          description: The Version of the application.
+          type: string
+        instanceMetadata:
+          title: AppMetadata.instanceMetadata
+          description: >-
+            An optional set of, implementation specific, metadata fields that
+            can be used to disambiguate instances, such as a window title or
+            screen position. Must only be set if `instanceId` is set.
+        title:
+          title: AppMetadata.title
+          description: >-
+            A more user-friendly application title that can be used to render UI
+            elements
+          type: string
+        tooltip:
+          title: AppMetadata.tooltip
+          description: A tooltip for the application that can be used to render UI elements
+          type: string
+        description:
+          title: AppMetadata.description
+          description: >-
+            A longer, multi-paragraph description for the application that could
+            include markup
+          type: string
+        icons:
+          items: {}
+          title: AppMetadata.icons
+          description: >-
+            A list of icon URLs for the application that can be used to render
+            UI elements
+          type: array
+        screenshots:
+          items: {}
+          title: AppMetadata.screenshots
+          description: >-
+            Images representing the app in common usage scenarios that can be
+            used to render UI elements
+          type: array
+        resultType:
+          title: AppMetadata.resultType
+          description: >-
+            The type of output returned for any intent specified during
+            resolution. May express a particular context type (e.g.
+            "fdc3.instrument"), channel (e.g. "channel") or a channel that will
+            receive a specified type (e.g. "channel<fdc3.instrument>").
+          nullable: true
+          type: string
+      additionalProperties: false
+      title: AppMetadata
+      description: >-
+        Extends an `AppIdentifier`, describing an application or instance of an
+        application, with additional descriptive metadata that is usually
+        provided by an FDC3 App Directory that the desktop agent connects to.
+
+
+        The additional information from an app directory can aid in rendering UI
+        elements, such as a launcher menu or resolver UI. This includes a title,
+        description, tooltip and icon and screenshot URLs.
+
+
+        Note that as `AppMetadata` instances are also `AppIdentifiers` they may
+        be passed to the `app` argument of `fdc3.open`, `fdc3.raiseIntent` etc.
+      type: object

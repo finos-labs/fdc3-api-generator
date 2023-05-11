@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: Converted from ContextMetadata.yaml with typeconv
+  version: '1'
+  x-id: ContextMetadata.yaml
+  x-comment: >-
+    Generated from src/main/resources/ts/api/ContextMetadata.ts by
+    core-types-json-schema (https://github.com/grantila/core-types-json-schema)
+    on behalf of typeconv (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    ContextMetadata:
+      properties:
+        source:
+          title: ContextMetadata.source
+          description: Identifier for the app instance that sent the context and/or intent.
+      required:
+        - source
+      additionalProperties: false
+      title: ContextMetadata
+      description: >-
+        Metadata relating to a context or intent and context received through
+        the
+
+        `addContextListener` and `addIntentListener` functions.
+
+        @experimental Introduced in FDC3 2.0 and may be refined by further
+        changes outside the normal FDC3 versioning policy.
+      type: object
